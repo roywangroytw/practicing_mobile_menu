@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <style>
     * {
@@ -12,6 +18,7 @@
       padding: 0;
       list-style: none;
       box-sizing: border-box;
+      font-family: "Merriweather", serif;
     }
 
     /* Main item for decoration */
@@ -31,9 +38,19 @@
       height: 300px;
       margin: 10px;
       border-radius: 10px;
+      padding: 15px;
     }
 
-    /* Navbar */
+    .main-item h2,
+    .main-item h3 {
+      margin-bottom: 10px;
+    }
+
+    .main-item p {
+      color: white;
+    }
+
+    /* Navbar - mobile */
 
     .main-header {
       background-color: white;
@@ -61,20 +78,24 @@
       width: 60%;
       height: calc(100vh - 80px);
       top: 100%;
-      left: 0;
+      left: -100%;
       border-right: 2px solid white;
       box-shadow: rgba(70, 70, 73, 0.2) 7px 0px 10px 0px;
-      display: none;
+      opacity: 0;
+      transition: all 0.4s ease-in-out;
     }
 
     #menu-switch {
       position: fixed;
+      display: none;
       bottom: 0;
       left: 0;
     }
 
     #menu-switch:checked ~ .main-header .main-nav {
-      display: block;
+      /* display: block; */
+      left: 0;
+      opacity: 1;
     }
 
     .main-nav a {
@@ -129,12 +150,60 @@
     </header>
 
     <section class="main">
-      <div class="main-item"></div>
-      <div class="main-item"></div>
-      <div class="main-item"></div>
-      <div class="main-item"></div>
-      <div class="main-item"></div>
-      <div class="main-item"></div>
+      <div class="main-item">
+        <h2>Product title</h2>
+        <h3>Product intro sub-heading</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias,
+          recusandae? Maxime vel inventore, amet sed nemo dicta quis quaerat
+          perspiciatis.
+        </p>
+      </div>
+      <div class="main-item">
+        <h2>Product title</h2>
+        <h3>Product intro sub-heading</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias,
+          recusandae? Maxime vel inventore, amet sed nemo dicta quis quaerat
+          perspiciatis.
+        </p>
+      </div>
+      <div class="main-item">
+        <h2>Product title</h2>
+        <h3>Product intro sub-heading</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias,
+          recusandae? Maxime vel inventore, amet sed nemo dicta quis quaerat
+          perspiciatis.
+        </p>
+      </div>
+      <div class="main-item">
+        <h2>Product title</h2>
+        <h3>Product intro sub-heading</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias,
+          recusandae? Maxime vel inventore, amet sed nemo dicta quis quaerat
+          perspiciatis.
+        </p>
+      </div>
+      <div class="main-item">
+        <h2>Product title</h2>
+        <h3>Product intro sub-heading</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias,
+          recusandae? Maxime vel inventore, amet sed nemo dicta quis quaerat
+          perspiciatis.
+        </p>
+      </div>
+      <div class="main-item">
+        <h2>Product title</h2>
+        <h3>Product intro sub-heading</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias,
+          recusandae? Maxime vel inventore, amet sed nemo dicta quis quaerat
+          perspiciatis.
+        </p>
+      </div>
     </section>
   </body>
 </html>
