@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+    }
+
+    /* Main item for decoration */
+
+    .main {
+      width: 95%;
+      max-width: 1200px;
+      margin: auto;
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .main-item {
+      background-color: pink;
+      width: calc(50% - 20px);
+      height: 300px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    /* Navbar */
+
+    .main-header {
+      background-color: white;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .container {
+      max-width: 1200px;
+      height: 80px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+    }
+
+    .main-nav {
+      display: none;
+    }
+
+    .logo {
+      width: 150px;
+    }
+
+    .logo img {
+      vertical-align: top;
+      width: 100%;
+      height: 40px;
+    }
+
+    .hamburger {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgb(104, 104, 104);
+      border-radius: 5px;
+    }
+  </style>
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <!-- Logo -->
+        <a href="" class="logo">
+          <h1>
+            <img src="https://fakeimg.pl/150x40/000000" />
+          </h1>
+        </a>
+
+        <!-- Hamberger -->
+        <div class="hamburger"></div>
+
+        <!-- Nav選單 -->
+        <nav class="main-nav">
+          <a href="#">Link</a>
+          <a href="#">Link</a>
+          <a href="#">Link</a>
+          <a href="#">Link</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="main">
+      <div class="main-item"></div>
+      <div class="main-item"></div>
+      <div class="main-item"></div>
+      <div class="main-item"></div>
+      <div class="main-item"></div>
+      <div class="main-item"></div>
+    </section>
+  </body>
+</html>
