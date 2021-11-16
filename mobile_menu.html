@@ -13,6 +13,13 @@
     />
   </head>
   <style>
+    body {
+      background: url("pngwing.com.png");
+      background-size: 1000px;
+      background-position: 140% 0%;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
     * {
       margin: 0;
       padding: 0;
@@ -35,22 +42,35 @@
     .main-item {
       background-color: pink;
       width: calc(50% - 20px);
-      height: 300px;
+      height: auto;
       margin: 10px;
       border-radius: 10px;
       padding: 15px;
+      box-shadow: rgba(67, 67, 75, 0.3) 0px 4px 5px 0px;
     }
 
     .main-item h2,
     .main-item h3 {
       margin-bottom: 10px;
+      position: relative;
     }
 
     .main-item p {
       color: white;
     }
 
-    /* Navbar - mobile */
+    .main-item h2::after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      margin-top: 2px;
+      background-color: rgb(172, 79, 79);
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+
+    /* Navbar */
 
     .main-header {
       background-color: white;
@@ -59,6 +79,22 @@
       top: 0;
       left: 0;
       right: 0;
+      z-index: 100;
+    }
+
+    .main-header::after {
+      content: "";
+      background: linear-gradient(
+        90deg,
+        rgb(236, 93, 93),
+        rgb(56, 116, 165),
+        rgb(49, 161, 146)
+      );
+      width: 100%;
+      height: 4px;
+      position: absolute;
+      top: 100%;
+      left: 0;
     }
 
     .container {
@@ -71,42 +107,6 @@
       padding: 15px;
     }
 
-    .main-nav {
-      /* display: none; */
-      position: absolute;
-      background-color: rgb(172, 79, 79);
-      width: 60%;
-      height: calc(100vh - 80px);
-      top: 100%;
-      left: -100%;
-      border-right: 2px solid white;
-      box-shadow: rgba(70, 70, 73, 0.2) 7px 0px 10px 0px;
-      opacity: 0;
-      transition: all 0.4s ease-in-out;
-    }
-
-    #menu-switch {
-      position: fixed;
-      display: none;
-      bottom: 0;
-      left: 0;
-    }
-
-    #menu-switch:checked ~ .main-header .main-nav {
-      /* display: block; */
-      left: 0;
-      opacity: 1;
-    }
-
-    .main-nav a {
-      display: block;
-      width: 100%;
-      padding: 20px;
-      border-bottom: 1px solid pink;
-      text-decoration: none;
-      color: white;
-    }
-
     .logo {
       width: 150px;
     }
@@ -117,11 +117,75 @@
       height: 40px;
     }
 
-    .hamburger {
-      width: 40px;
-      height: 40px;
-      border: 1px solid rgb(172, 79, 79);
-      border-radius: 5px;
+    /* Extracting shared css among mobile & desktop menu */
+
+    .main-nav a {
+      display: block;
+      text-decoration: none;
+    }
+
+    /* For mobile menu */
+
+    @media screen and (max-width: 1024px) {
+      .hamburger {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgb(172, 79, 79);
+        border-radius: 5px;
+      }
+
+      .main-nav {
+        /* display: none; */
+        position: absolute;
+        background-color: rgb(170, 66, 66);
+        width: 60%;
+        height: calc(100vh - 80px);
+        top: 100%;
+        left: -100%;
+        border-right: 2px solid white;
+        box-shadow: rgba(70, 70, 73, 0.2) 7px 0px 10px 0px;
+        opacity: 0;
+        transition: all 0.4s ease-in-out;
+      }
+
+      #menu-switch {
+        position: fixed;
+        display: none;
+        bottom: 0;
+        left: 0;
+      }
+
+      #menu-switch:checked ~ .main-header .main-nav {
+        /* display: block; */
+        left: 0;
+        opacity: 1;
+      }
+
+      .main-nav a {
+        width: 100%;
+        padding: 20px;
+        border-bottom: 1px solid pink;
+        color: white;
+      }
+    }
+
+    /* For mobile menu */
+
+    @media screen and (min-width: 1025px) {
+      .hamburger {
+        /* 避免畫面被影響 */
+        display: none;
+      }
+      .main-nav {
+        display: flex;
+      }
+      .main-nav a {
+        padding: 10px 20px;
+        color: black;
+      }
+      .main-nav a + a {
+        border-left: 1px solid rgb(49, 161, 146);
+      }
     }
   </style>
   <body>
